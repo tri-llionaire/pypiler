@@ -1,9 +1,7 @@
-#LEXER 20
+#LEXER 23
 cmdict = {'print': 'CMD(PRINT)', 'raw_input': 'CMD(RAWINPUT)'}
 commands = ['print']
 nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '_', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-tokens = ['ID', 'CHAR', 'PROMPT', 'NUM', 'FLOAT', 'STR','FALSE', 'TRUE', 'NONE', 'EXCL', 'TILDE', 'GRAVE', 'ATSIGN', 'HASH', 'DOLLAR', 'PERCENT', 'CARET', 'ANDSIGN', 'STAR', 'LPAREN', 'RPAREN', 'MINUS', 'PLUS', 'EQUAL', 'LBRACE', 'RBRACE', 'LBRACK', 'RBRACK', 'PIPE', 'QUOTE', 'DQUOTE', 'COLON', 'SEMIC', 'PERIOD', 'COMMA', 'BSLASH', 'LARROW', 'RARROW', 'QUESTION', 'SLASH']
 program = raw_input('TOKENIZE:\n')
 program = program.split()
 for i in program:
@@ -161,10 +159,6 @@ for i in program:
     elif i == '/':
         program = ' '.join(program)
         program = program.replace(i, 'SLASH ')
-        program = program.split()
-    elif i in chars:
-        program = ' '.join(program)
-        program = program.replace(i, 'CHAR(%s) ' % i)
         program = program.split()
     else:
         program = ' '.join(program)
