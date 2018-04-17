@@ -1,5 +1,5 @@
-#LEXER 25
-cmdict = {'print': 'CMD(PRINT)', 'raw_input': 'CMD(RAWINPUT)'}
+#LEXER 1.26
+cmdict = {'print': 'CMD(PRINT)', 'raw_input': 'CMD(INPUT)'}
 commands = ['print']
 nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '_', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -8,12 +8,12 @@ for i in program:
     if len(i) > 1:
         if i.startswith('raw_input(\''):
             program = ' '.join(program)
-            program = program.replace(i, 'CMD(RAWINPUT) STR(%s)' % i[11:-2])
+            program = program.replace(i, 'CMD(INPUT) STR(%s)' % i[11:-2])
             program = program.split()
         elif i.startswith('raw_input('):
             if i[11] != '\'':
                 program = ' '.join(program)
-                program = program.replace(i, 'CMD(RAWINPUT) ID(%s)' % i[10:-1])
+                program = program.replace(i, 'CMD(INPUT) ID(%s)' % i[10:-1])
                 program = program.split()
         elif i.startswith('print \''):
             program = ' '.join(program)
