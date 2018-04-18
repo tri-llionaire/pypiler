@@ -1,4 +1,5 @@
-#LEXER 1.26
+#LEXER 1.33
+program = raw_input('TOKENIZE:\n')
 cmdict = {'print': 'CMD(PRINT)', 'raw_input': 'CMD(INPUT)'}
 commands = ['print']
 nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -166,6 +167,6 @@ for i in program:
         program = program.split()
     else:
         program = ' '.join(program)
-        program = 'ERROR on function %s' % i
+        program = ['Error']
         break
-print program
+print ' '.join(program)
