@@ -1,1 +1,5 @@
 language: python
+rvm:
+    - "2.7"
+install:
+    - make build
